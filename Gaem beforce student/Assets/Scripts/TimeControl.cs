@@ -12,6 +12,7 @@ public class TimeControl : MonoBehaviour
     float timer;
     float timer2;
     float arrayNumber;
+    float revertSpeed = 40;
     public Vector3[] playerPositions;
 
 
@@ -66,7 +67,7 @@ public class TimeControl : MonoBehaviour
             player.GetComponent<Movement>().enabled = false;
             player.GetComponent<BoxCollider>().enabled = false;
             player.GetComponent<Rigidbody>().useGravity = false;
-            player.transform.position = Vector3.MoveTowards(player.transform.position, temporaryPlayerPosition, 25 * Time.deltaTime);
+            player.transform.position = Vector3.MoveTowards(player.transform.position, temporaryPlayerPosition, revertSpeed * Time.deltaTime);
         }
         else
         {
