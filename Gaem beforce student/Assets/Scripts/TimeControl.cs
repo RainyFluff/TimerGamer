@@ -65,14 +65,14 @@ public class TimeControl : MonoBehaviour
         if(temporaryPlayerPosition != new Vector3(0, 0, 0))
         {
             player.GetComponent<Movement>().enabled = false;
-            player.GetComponent<BoxCollider>().enabled = false;
+            player.GetComponent<CapsuleCollider>().enabled = false;
             player.GetComponent<Rigidbody>().useGravity = false;
             player.transform.position = Vector3.MoveTowards(player.transform.position, temporaryPlayerPosition, revertSpeed * Time.deltaTime);
         }
         else
         {
             player.GetComponent<Movement>().enabled = true;
-            player.GetComponent<BoxCollider>().enabled = true;
+            player.GetComponent<CapsuleCollider>().enabled = true;
             player.GetComponent<Rigidbody>().useGravity = true;
         }
 
